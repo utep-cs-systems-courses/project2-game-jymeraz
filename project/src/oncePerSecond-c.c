@@ -1,6 +1,6 @@
 #include <msp430.h>
 #include "led-sequences.h" 
-/*
+
 void oncePerSecond() // repeatedly start dim, get bright, get dim, then change directions
 {
   if (blinkLimit >= 8) { 
@@ -17,4 +17,3 @@ void oncePerSecond() // repeatedly start dim, get bright, get dim, then change d
     blinkLimit --;
   }
 }
-*/

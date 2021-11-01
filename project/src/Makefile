@@ -22,18 +22,15 @@ load-c: led-c.elf
 load-s: led-s.elf
 	msp430loader.sh $^
 
-#load: led.elf 
-#	msp430loader.sh $^
-
 clean:
 	rm -f *.o *.elf
 
-led.o: led.c led.h
+led.o: led.h
 
 oncePerSecond-s.o: led-sequences.h
 
 interruptHandler.o: led.h switches.h led-sequences.h
 
-led-sequences.o: led.h led-sequences.h 
+led-sequences.o: led.h led-sequences.h
 
 oncePerSecond-s.o: led-sequences.h

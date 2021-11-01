@@ -7,5 +7,6 @@ extern int direction;
 
 void buttonOne();
 void buttonTwo();
+extern void oncePerSecond();
 
 #endif

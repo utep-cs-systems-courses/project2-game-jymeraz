@@ -7,22 +7,22 @@
 oncePerSecond:
 	cmp #8, &blinkLimit
 	jnc first
-	mov #0, &blinkLimit
+	mov #0, &direction
 	xor #1, &color
-	jmp out
+	jmp first
 first:
 	cmp &blinkLimit, #0
 	jnc second
 	mov #1, &direction
-	jmp out
+	jmp second
 second:
 	cmp #1, &direction
-	jnc third
+	jne third
 	add #1, &blinkLimit
 	jmp out
 third:
-	sub #1, blinkLimit
-	jmp out
+	sub #1, &blinkLimit
+	jmp out			
 out:
 	pop r0			
 	

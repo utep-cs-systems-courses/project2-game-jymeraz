@@ -1,9 +1,9 @@
 #include <msp430.h>
 #include "led-sequences.h"
-#include "led.h" 
+#include "led.h"
 
-int blinkLimit = 8;   //  state var representing the number of current maximum blinks
-int direction = 0;  // state var representing whether its getting brighter or dimmer
+int blinkLimit = 0;   //  state var representing the number of current maximum blinks
+int direction = 1;  // state var representing whether its getting brighter or dimmer
 int color = 0; // state var representing the color that is blinking
 
 void blinkUpdate() // called every 1/250s to blink with duty cycle 1/blinkLimit
