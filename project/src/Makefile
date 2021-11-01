@@ -1,5 +1,5 @@
 # makfile configuration
-COMMON_OBJECTS  = main.o buzzer.o switches.o led.o led-sequences.o interruptHandler.o oncePerSecond-c.o
+COMMON_OBJECTS  = main.o buzzer.o switches.o led.o led-sequences.o interruptHandler.o
 CPU             = msp430g2553
 CFLAGS          = -mmcu=${CPU} -I../h
 LDFLAGS		= -L/opt/ti/msp430_gcc/include 
@@ -8,7 +8,7 @@ LDFLAGS		= -L/opt/ti/msp430_gcc/include
 CC              = msp430-elf-gcc
 AS              = msp430-elf-as
 
-all: led.elf  
+all: led-c.elf led-s.elf  
 
 #additional rules for files
 led-c.elf: ${COMMON_OBJECTS} oncePerSecond-c.o
@@ -18,18 +18,22 @@ led-s.elf: ${COMMON_OBJECTS} oncePerSecond-s.o
 
 load-c: led-c.elf
 	msp430loader.sh $^
+
 load-s: led-s.elf
 	msp430loader.sh $^
 
-load: led.elf 
-	msp430loader.sh $^
+#load: led.elf 
+#	msp430loader.sh $^
 
 clean:
 	rm -f *.o *.elf
 
 led.o: led.c led.h
+
 oncePerSecond-s.o: led-sequences.h
 
 interruptHandler.o: led.h switches.h led-sequences.h
 
-led-sequences.o: led.h led-sequences.h #oncePerSecond-c.h
+led-sequences.o: led.h led-sequences.h 
+
+oncePerSecond-s.o: led-sequences.h
