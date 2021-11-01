@@ -5,11 +5,7 @@ each state machine.
 
 Program           | Description
 ----------------- | ------------------------------------------------
-buzzer	          | Uses timer interrupts to play songs.
-	     	  | The first song is the adventure time theme song and the
-	     	  | if statements are used to determine when a note should be played.
-	     	  | The second song is the happy birthday song, and it has led lights
-	      	  | to accompany it.
+buzzer	          | Uses timer interrupts to play songs. The first song is the adventure time theme song and the if statements are used to determine when a note should be played. The second song is the happy birthday song, and it has led lights to accompany it.
 interruptHandler  | Contains timer and switch interrupts
 led-sequences	  | Uses timer interrupts to flash the leds
 		  | The first pattern starts off as bright green, gets dimmer,
