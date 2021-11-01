@@ -1,7 +1,0 @@
-#ifndef stateMachine_included
-#define stateMachine_included
-
-void buttonOne();
-void buttonTwo();
-
-#endif
