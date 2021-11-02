@@ -27,10 +27,15 @@ clean:
 
 led.o: led.h
 
+buzzer.o: led.h buzzer.h
+
+switches.o: led.h switches.h
+
 oncePerSecond-s.o: led-sequences.h
 
-interruptHandler.o: led.h switches.h led-sequences.h
+oncePerSecond-c.o: led-sequences.h
+
+interruptHandler.o: led.h switches.h led-sequences.h buzzer.h
 
 led-sequences.o: led.h led-sequences.h
 
-oncePerSecond-s.o: led-sequences.h
